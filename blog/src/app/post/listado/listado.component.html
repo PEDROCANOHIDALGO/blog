@@ -1,0 +1,20 @@
+<div class="post-list">
+    <div class="card mb-3" *ngFor="let post of posts">
+      <div class="card-footer">
+        <small class="text-muted">Post ID: {{ post.id }}</small>
+      </div>
+      <div class="card-header">
+        <h5 class="card-title">{{ post.title }}</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ post.body }}</p>
+      </div>
+      <div class="card-footer">
+        <!-- Botones -->
+        <a class="btn btn-primary" [routerLink]="['/vista-individual','post.id']">Ver</a>
+        <a class="btn btn-warning" [routerLink]="['/actualizacion','post.id' ]">Editar</a>
+        <button class="btn btn-danger" (click) ="borrar(post)" >Borrar</button>
+        <a class="btn btn-primary" [routerLink]="['/creacion','post.id' ]">Crear</a>
+      </div>
+    </div>
+  </div>
